@@ -123,41 +123,6 @@ class LoginController extends Controller
         return redirect(route('admin.home'));
     }
 
-    public function ViewOperatorLogin(Request $r)
-    {
-        $role_check = $r->session()->get('role');
-        if ($r->session()->has('email') && $role_check === 'operator') {
-            $user = session()->get('nama');
-            Alert::info('Sudah Login', 'Anda sudah login dengan user ' . $user);
-            return redirect(route('operator.home'));
-        }
-        return view('operator.login');
-    }
-
-    public function AuthOperatorLogin(Request $r)
-    {
-        $role_check = $r->session()->get('role');
-        if ($r->session()->has('email') && $role_check === 'operator') {
-            return redirect(route('operator.home'));
-        }
-
-        $operator = \DB::select("SELECT * FROM operators WHERE email = '$r->email' && password = '$r->password'");
-
-        if (count($operator) === 0) {
-            Alert::error('Login Gagal', 'Username atau password salah.')->persistent(true);
-            return redirect(route('operator.login.auth'));
-        }
-
-        session([
-            'id' => $operator[0]->id,
-            'nama' => $operator[0]->nama,
-            'email' => $operator[0]->email,
-            'role' => 'operator'
-        ]);
-
-        return redirect(route('operator.home'));
-    }
-
     public function logout(Request $r)
     {
         $role = $r->session()->get('role');

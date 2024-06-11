@@ -23,13 +23,4 @@ class HomeController extends Controller
         }
         return view ('admin.home');
     }
-    
-    public function HomeOperator(Request $r){
-        $role_check = $r->session()->get('role');
-
-        if (!$r->session()->has('email') || $role_check !== 'operator' ) {
-            return redirect(route('operator.login.view'));
-        }
-        return view ('operator.home');
-    }
 }
