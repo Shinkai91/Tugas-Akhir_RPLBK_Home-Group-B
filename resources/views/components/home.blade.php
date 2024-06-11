@@ -97,9 +97,9 @@
             <div class="jumbotron" style="text-align: center;background-color: #202942;" data-aos="fade-up"
                 data-aos-duration="3000">
                 <a href="https://github.com/Shinkai91" style="font-size:30px" class="fa fa-github"></a>
-                <h6 style="color:rgb(223, 223, 223);">Kelompok 4</h6>
+                <h6 style="color:rgb(223, 223, 223);">Home Group B</h6>
                 <h6 style="color:rgb(223, 223, 223);">&#169; {{ date('Y') }}</h6>
-                <h4 style="color:rgb(158, 158, 158)">Sistem Informasi</h4>
+                <h4 style="color:rgb(158, 158, 158)">Rekayasa Perangkat Lunak Berbasis Komponen</h4>
                 <a href="#" class="fa fa-angle-up"
                     style="margin-bottom: -10%;color:rgb(223, 223, 223);"></a>
                 <a href="#" onclick="window.scrollTo(0, 0);" style="text-decoration:none;">
